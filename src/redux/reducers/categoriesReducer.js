@@ -1,14 +1,30 @@
+
 const initialState = {
-    categories: [],
+    categorias: [], 
     loading: false,
     error: null,
 };
 
-function categoriesReducer(state = initialState, action) {
+export default function categoriasReducer(state = initialState, action) {
     switch (action.type) {
+        case 'CATEGORIAS_CARGANDO':
+            return {
+                ...state,
+                cargando: true,
+            };
+        case 'CATEGORIAS_EXITO':
+            return {
+                ...state,
+                cargando: false,
+                categorias: action.payload,
+            };
+        case 'CATEGORIAS_ERROR':
+            return {
+                ...state,
+                cargando: false,
+                error: action.payload,
+            };
         default:
             return state;
     }
 }
-
-export default categoriesReducer;

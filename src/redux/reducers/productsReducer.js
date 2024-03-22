@@ -1,20 +1,24 @@
-const initialState = {
-    products: [],
-    loading: false,
+const estadoInicial = {
+    productos: [],
+    total: 0, 
+    cargando: false,
     error: null,
 };
 
-function productsReducer(state = initialState, action) {
-    switch (action.type) {
-        case 'PRODUCTS_LOADING':
-            return { ...state, loading: true, error: null };
-        case 'PRODUCTS_SUCCESS':
-            return { ...state, loading: false, products: action.payload };
-        case 'PRODUCTS_ERROR':
-            return { ...state, loading: false, error: action.payload };
+// Reducer para manejar el estado de los productos.
+function reducerProductos(estado = estadoInicial, accion) {
+    switch (accion.type) {
+        case 'PRODUCTOS_CARGANDO':
+            return { ...estado, cargando: true, error: null };
+        case 'PRODUCTOS_EXITO':
+            return { ...estado, cargando: false, productos: accion.payload, total: accion.total };
+        case 'PRODUCTOS_ERROR':
+            return { ...estado, cargando: false, error: accion.payload };
+        case 'PRODUCTOS_POR_CATEGORIA_EXITO':
+            return { ...estado, cargando: false, productos: accion.payload, total: accion.total };
         default:
-            return state;
+            return estado;
     }
 }
 
-export default productsReducer;
+export default reducerProductos;
