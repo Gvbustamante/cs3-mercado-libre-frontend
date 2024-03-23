@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react';
 import Header from './components/Header';
-import FiltroCategorias from './components/FiltroCategorias.js';
 import { useDispatch, useSelector } from 'react-redux';
 import { obtenerCategorias } from './redux/actions/categoriasActions.js';
 import  routesArray  from './routes.js';

@@ -35,6 +35,15 @@ const TablaProductos = ({ productos }) => {
                     </tr>
                 ))}
             </tbody>
+            <tfoot>
+                 <tr>
+                    <th scope="col">Producto ID</th>
+                    <th scope="col">Nombre producto</th>
+                    <th scope="col">Precio</th>
+                    <th scope="col">MercadoEnlace</th>
+                    <th scope="col">Imagen</th>
+                </tr>
+            </tfoot>
         </table>
     );
 };
