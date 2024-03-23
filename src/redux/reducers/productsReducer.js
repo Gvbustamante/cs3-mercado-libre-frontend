@@ -18,6 +18,8 @@ function reducerProductos(estado = estadoInicial, accion) {
             return { ...estado, cargando: false, error: accion.payload };
         case 'PRODUCTOS_POR_CATEGORIA_EXITO':
             return { ...estado, cargando: false, productos: accion.payload, total: accion.total };
+        case 'LIMPIAR_PAGINACION':
+            return { ...estado, desplazamiento: accion.desplazamiento, limite:accion.limite};
         default:
             return estado;
     }

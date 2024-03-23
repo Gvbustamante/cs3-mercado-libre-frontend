@@ -1,10 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Sidebar from './sidebar.js';
+import { useDispatch, useSelector } from 'react-redux';
+import { limpiarPaginacion } from '../redux/actions/productsActions.js';
 
 const FiltroCategorias = ({ categoria }) => {
     // Estado para controlar qué categoría (si hay alguna) está expandida
     const [categoriaExpandida, setCategoriaExpandida] = useState(null);
+    const despachar = useDispatch();
+    const paginacion = useSelector((state) => state.productos);
     
     const toggleExpansion = (idCategoria) => {
         // Cambia el estado a null si la categoría ya está expandida, o al idCategoria si está contraída
@@ -17,6 +21,10 @@ const FiltroCategorias = ({ categoria }) => {
          setCategoriaExpandida(categoriaIdGuardada);
     }, [categoria]);
 
+    const limpiarPaginacionVista = () => {
+        despachar(limpiarPaginacion());
+    };
+
     return (
         <div className="list-group">
                 <div key={categoria.id}>
@@ -28,6 +36,7 @@ const FiltroCategorias = ({ categoria }) => {
                         <Link
                             to={`/${categoria.id}`}
                             className="list-group-item-action"
+                            onClick={() => limpiarPaginacionVista()}
                         >
                             {categoria.name}
                         </Link>

@@ -21,3 +21,9 @@ export const obtenerProductos = (desplazamiento = 0, limite = 10, idCategoria = 
         despachar({ type: 'PRODUCTOS_ERROR', payload: error.response.data.message });
     }
 };
+
+
+// Acción para limpiar paginacion
+export const limpiarPaginacion = () => async (despachar) => {
+    despachar({ type: 'LIMPIAR_PAGINACION', desplazamiento:0, limite:10 });
+};
