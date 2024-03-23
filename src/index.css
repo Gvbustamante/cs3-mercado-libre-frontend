@@ -19,3 +19,11 @@ code {
 .paginate_button{
   cursor: pointer;
 }
+
+.display-flex{
+  display: flex !important;
+}
+
+.color-black{
+  color: black !important;
+}

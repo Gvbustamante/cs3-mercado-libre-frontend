@@ -8,7 +8,6 @@ const FiltroCategorias = ({ categoria }) => {
     // Estado para controlar qué categoría (si hay alguna) está expandida
     const [categoriaExpandida, setCategoriaExpandida] = useState(null);
     const despachar = useDispatch();
-    const paginacion = useSelector((state) => state.productos);
     
     const toggleExpansion = (idCategoria) => {
         // Cambia el estado a null si la categoría ya está expandida, o al idCategoria si está contraída
@@ -28,14 +27,15 @@ const FiltroCategorias = ({ categoria }) => {
     return (
         <div className="list-group">
                 <div key={categoria.id}>
-                    <div className="list-group-item">
-                            <button onClick={() => toggleExpansion(categoria.id)} >
+                    <div className="list-group-item display-flex">
+                            <button className="btn btn-primary shadow-sm" onClick={() => toggleExpansion(categoria.id)} >
                                 {categoriaExpandida === categoria.id ? '-' : '+'}
                             </button>
+                            <br/>
                         
                         <Link
                             to={`/${categoria.id}`}
-                            className="list-group-item-action"
+                            class="sidebar-link color-black"
                             onClick={() => limpiarPaginacionVista()}
                         >
                             {categoria.name}

@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { obtenerProductos } from '../redux/actions/productsActions';
-import TarjetaProducto from './ProductCard';
 import TablaProductos from './TablaProductos';
 
 const ListaProductosPorCategoria = () => {

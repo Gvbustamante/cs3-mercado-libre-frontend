@@ -28,7 +28,7 @@ const TablaProductos = ({ productos }) => {
     };
 
     return (
-        <table className="table table-hover">
+        <table className="table table-hover" >
             <thead>
                 <tr>
                     <th scope="col">Producto ID</th>
