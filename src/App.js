@@ -13,20 +13,20 @@ function App() {
 
   useEffect(() => {
       dispatch(obtenerCategorias()); 
-  }, [dispatch]);
-  
+  }, [dispatch]);  
+
     return (
         <BrowserRouter>
             <div>
                 <Header />
                     
-                    <div className="container-fluid">
+                    <div className="container-fluid main">
                     <div className="row">
                         <div className="col-md-3">
                             {/* Sidebar para Filtro de Categorías */}
                             <Sidebar categorias={categorias}  esPrimero={true}/>
                         </div>
-                        <div className="col-md-9">
+                        <div className="col-md-9 content">
                             {/* Contenido Principal */}
                             <Routes>
                                 {routesArray}
