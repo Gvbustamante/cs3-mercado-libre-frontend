@@ -25,7 +25,7 @@ function App() {
                     <div className="row">
                         <div className="col-md-3">
                             {/* Sidebar para Filtro de Categorías */}
-                            <Sidebar categorias={categorias} />
+                            <Sidebar categorias={categorias}  esPrimero={true}/>
                         </div>
                         <div className="col-md-9">
                             {/* Contenido Principal */}
