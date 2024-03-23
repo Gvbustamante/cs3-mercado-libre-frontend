@@ -1,8 +1,9 @@
 import React from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const TablaProductos = ({ productos }) => {
     return (
-        <table className="table table-dark table-hover">
+        <table className="table table-hover">
             <thead>
                 <tr>
                     <th scope="col">Producto ID</th>
@@ -24,7 +25,12 @@ const TablaProductos = ({ productos }) => {
                             </a>
                         </td>
                         <td>
-                            <img src={producto.thumbnail} alt={producto.title} className="img-fluid" style={{ maxWidth: '100px' }} />
+                        <LazyLoadImage src={producto.thumbnail}
+                            
+                            alt={producto.title}
+                            className="img-fluid" 
+                            style={{ maxWidth: '100px' }}
+                        />
                         </td>
                     </tr>
                 ))}

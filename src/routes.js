@@ -4,7 +4,7 @@ import ListaProductos from './components/ProductList';
 
 
 const routesArray = [
-  <Route key="listaGeneral" path="/" element={<ListaProductos />} />,
+  <Route key="listaGeneral" path="/" element={<ListaProductosPorCategoria />} />,
   <Route key="listaProductos" path="/:category_id" element={<ListaProductosPorCategoria />} />
 ]
 
