@@ -6,7 +6,7 @@ const Sidebar = ({ categorias, esPrimero }) => {
     return (
         <div className="sidepanel-inner d-flex flex-column">
 <nav id="app-nav-main" className={esPrimero?"app-nav app-nav-main flex-grow-1 mt-5":"app-nav app-nav-main flex-grow-1 mt-3 mb-3 ms-5"}>
-                {categorias.map((categoria) => (
+                {categorias?.map((categoria) => (
                     <FiltroCategorias categoria={categoria} />
                 ))}
             </nav>
