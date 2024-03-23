@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { obtenerProductos } from '../redux/actions/productsActions.js'; 
 import { Link } from 'react-router-dom';
 import Sidebar from './sidebar.js';
 
 const FiltroCategorias = ({ categoria }) => {
-    const despachar = useDispatch();
     // Estado para controlar qué categoría (si hay alguna) está expandida
     const [categoriaExpandida, setCategoriaExpandida] = useState(null);
     
-    const manejarCambioCategoria = (idCategoria) => {
-        despachar(obtenerProductos(0, 10, idCategoria));
-    };
-
     const toggleExpansion = (idCategoria) => {
         // Cambia el estado a null si la categoría ya está expandida, o al idCategoria si está contraída
         setCategoriaExpandida(categoriaExpandida === idCategoria ? null : idCategoria);

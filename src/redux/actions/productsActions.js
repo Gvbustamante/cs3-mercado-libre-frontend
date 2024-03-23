@@ -15,7 +15,7 @@ export const obtenerProductos = (desplazamiento = 0, limite = 10, idCategoria = 
         // Realizamos la solicitud a la API utilizando axios.
         const respuesta = await axios.get(url);
         // Despachamos la acción de éxito al obtener los productos.
-        despachar({ type: 'PRODUCTOS_EXITO', payload: respuesta.data.results, total: respuesta.data.paging.total });
+        despachar({ type: 'PRODUCTOS_EXITO', payload: respuesta.data.results, total: respuesta.data.paging.total, desplazamiento:desplazamiento, limite:limite });
     } catch (error) {
         // En caso de error, despachamos la acción correspondiente.
         despachar({ type: 'PRODUCTOS_ERROR', payload: error.response.data.message });

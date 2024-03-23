@@ -9,14 +9,11 @@ const ListaProductosPorCategoria = () => {
   const { category_id } = useParams(); // Esto obtiene el category_id de la URL
   const dispatch = useDispatch();
   const productos = useSelector((state) => state.productos.productos);
+  const paginacion = useSelector((state) => state.productos);
 
 
   useEffect(() => {
-    if(category_id){
-      dispatch(obtenerProductos(0, 10,category_id));
-    }else{
-      dispatch(obtenerProductos());
-    }
+      dispatch(obtenerProductos(paginacion.desplazamiento, paginacion.limite,category_id));
   }, [dispatch, category_id]);
 
   // Renderiza la lista de productos o un mensaje si no hay productos.
