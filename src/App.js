@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { obtenerCategorias } from './redux/actions/categoriasActions.js';
 import  routesArray  from './routes.js';
 import { BrowserRouter, Routes } from 'react-router-dom';
+import Sidebar from './components/sidebar.js';
 
 function App() {
 
@@ -24,7 +25,7 @@ function App() {
                     <div className="row">
                         <div className="col-md-3">
                             {/* Sidebar para Filtro de Categorías */}
-                            <FiltroCategorias categorias={categorias} />
+                            <Sidebar categorias={categorias} />
                         </div>
                         <div className="col-md-9">
                             {/* Contenido Principal */}
