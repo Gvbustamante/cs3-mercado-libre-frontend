@@ -5,11 +5,13 @@ const TarjetaProducto = ({ producto }) => {
         <div className="card">
             <img src={producto.thumbnail} className="card-img-top" alt={producto.title} />
             <div className="card-body">
-                <h5 className="card-title">{producto.title}</h5>
-                <p className="card-text">${producto.price}</p>
+                <h6 className="card-title">{producto.title}</h6>
+                <p className="card-text">ID: {producto.id}</p>
+                <p className="card-text">Precio: ${producto.price}</p>
                 <a href={producto.permalink} className="btn btn-primary" target="_blank" rel="noopener noreferrer">Ver en Mercado Libre</a>
-            </div>
+            </div>      
         </div>
+
     );
 };
 
